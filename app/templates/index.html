@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class = "row" style = "height: 500px;">
+          <div id="map" class = "col-sm-8 col-sm-offset-2"></div>
+
+              <script type="text/javascript">
+                var map;
+                function initMap() {
+                  map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 37.762, lng: -122.450},
+                    zoom: 12
+                  });
+
+                  map.data.loadGeoJson("static/geojson/sf.json");
+
+                  map.data.setStyle(function(feature) {
+                    color = "blue";
+                    opacity = Math.random();
+                    return ({
+                      fillColor: color,
+                      fillOpacity: opacity,
+                      strokeWeight: 0
+                    })
+                  });
+
+                }
+              </script>
+
+            <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVtgQwklaYQq6Ec7QVvw9bhATwpJEAlAw&callback=initMap">
+            </script>
+
+        </div>
+{% endblock %}
