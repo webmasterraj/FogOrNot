@@ -3,7 +3,7 @@ from shapely.geometry import shape, Point
 import pandas as pd
 import numpy as np
 
-SF = json.loads(open('static/geojson/sf.json', 'r').read())
+SF = json.loads(open('https://www.dropbox.com/s/3vgqqeh58niavgz/sf_forecasts.geojson?raw=1', 'r').read())
 
 def addNeighborhood(stations):
 	for s in stations:
