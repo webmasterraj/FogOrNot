@@ -1,3 +1,4 @@
+gunicorn==19.3.0
 Flask==0.10
 Shapely==1.5.12
 numpy==1.10.0
