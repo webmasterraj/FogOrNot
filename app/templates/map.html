@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <script src = "https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 
@@ -15,7 +16,7 @@
             <label for="fader"></label>
               <output for="fader" id="time">Pick a time</output>
               <br/>
-              <input type="range" min="0" max="100" value = "50" id="fader" step="3600000" oninput="outputUpdate(value)">
+              <input type="range" min="0" max="100" value = "50" id="fader" step="3600000" oninput="outputUpdate(value)" style = "width: 100%;">
 
               <script "text/javascript">
               
