@@ -1,9 +1,9 @@
-import json
 from shapely.geometry import shape, Point
 import pandas as pd
 import numpy as np
+import aws
 
-SF = json.loads(open('https://www.dropbox.com/s/3vgqqeh58niavgz/sf_forecasts.geojson?raw=1', 'r').read())
+SF = aws.getJSON()
 
 def addNeighborhood(stations):
 	for s in stations:
@@ -29,5 +29,4 @@ def addForecastsToJSON(df):
 
 	
 def createNewJSON():
-	out_file = open("static/geojson/sf_forecasts.geojson", 'w')
-	json.dump(SF, out_file, indent=1)
+	aws.writeJSON(SF)
