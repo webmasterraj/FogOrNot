@@ -13,15 +13,12 @@ class jsonFile(db.Model):
     name = db.Column(db.String(80))
     json = db.Column(db.Text())
     created_date = db.Column(db.Date())
-
     def __init__(self, name, json, created_date):
         self.name = name
         self.json = json
         self.created_date = created_date
-
     def __repr__(self):
         return '<Name %r>' % self.name
 
 from app import views
-
 

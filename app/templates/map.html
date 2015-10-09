@@ -16,7 +16,7 @@
             <label for="fader"></label>
               <output for="fader" id="time">Pick a time</output>
               <br/>
-              <input type="range" min="0" max="100" value = "50" id="fader" step="3600000" oninput="outputUpdate(value)" style = "width: 70%;">
+              <input type="range" min="0" max="100" value = "50" id="fader" step="3600000" oninput="outputUpdate(value)" style = "width: 70%; float:none; display:inline-block">
 
               <script "text/javascript">
               
@@ -30,6 +30,7 @@
               window.onload = function() {
                 var next_hour = roundMinutes(new Date(Date.now()));
                 var last_hour = roundMinutes(new Date(Date.now() + (3600000 * 120)));
+
                 $('#fader').prop('min', Date.parse(next_hour));
                 $('#fader').prop('max', Date.parse(last_hour));
                 $('#fader').prop('value', Date.parse(next_hour));
@@ -62,7 +63,7 @@
                     center: {lat: 37.762, lng: -122.450},
                     zoom: 12
                   }); 
-                  map.data.loadGeoJson("static/geojson/sf_forecasts.geojson");
+                  map.data.addGeoJson({{ jsonfile|safe }});
                   styleMap();
                 }
                 
@@ -71,8 +72,8 @@
               function styleMap() {
                 map.data.setStyle(function(feature) {
                   var forecast = feature.getProperty(hour.toString());
-                  var color = "white";
-                  var opacity = 0.7;  
+                  var color = "black";
+                  var opacity = 0.8;
                   if (typeof forecast != "undefined") {
                     color = "blue";
                     opacity = forecast / 5;  
