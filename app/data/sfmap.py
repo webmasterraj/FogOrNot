@@ -1,9 +1,9 @@
 from shapely.geometry import shape, Point
 import pandas as pd
 import numpy as np
-import aws
+import sql
 
-SF = aws.getJSON()
+SF = sql.getNeighborhoodsJSON()
 
 def addNeighborhood(stations):
 	for s in stations:
@@ -29,4 +29,4 @@ def addForecastsToJSON(df):
 
 	
 def createNewJSON():
-	aws.writeJSON(SF)
+	sql.writeForecastsJSON(SF)
