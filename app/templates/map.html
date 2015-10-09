@@ -5,8 +5,8 @@
 
 
         <div class = "row">
-          <div class = "col-sm-6 col-sm-offset-3 tagline">
-            <p>Where's the fog going to be in San Francisco?</p>
+          <div class = "col-sm-6 col-sm-offset-3 tagline" style = "padding-top: 10px;">
+            <p>Forecasting the fog in San Francisco</p>
           </div>
         </div>
 
@@ -14,7 +14,7 @@
         <div class = "row" style = "padding-bottom: 25px;">
           <div class = "col-sm-6 col-sm-offset-3" style = "text-align: center;">
             <label for="fader"></label>
-              <output for="fader" id="time">Pick a time</output>
+              <output for="fader" id="time">Use slider to pick a time</output>
               <br/>
               <input type="range" min="0" max="100" value = "50" id="fader" step="3600000" oninput="outputUpdate(value)" style = "width: 70%; float:none; display:inline-block">
 
@@ -51,12 +51,18 @@
           </div>
 
 
+        <div class = "row">
+          <div class = "col-sm-6 col-sm-offset-3 footer">
+            <p>predictions based on data from amateur weather stations<br/>fog is blue. darker blue means more fog. black means no data for that area</p>
+          </div>
+        </div>
+
         <div class = "row" style = "height: 500px;">
           <div id="map" class = "col-xs-10 col-xs-offset-1"></div>
 
               <script type="text/javascript">
                 var map;
-                var hour = Date.parse(roundMinutes(new Date(Date.now()))) + 3600;
+                var hour = (Date.parse(roundMinutes(new Date(Date.now()))) / 1000) + 3600;
 
                 function initMap() {
                   map = new google.maps.Map(document.getElementById('map'), {
