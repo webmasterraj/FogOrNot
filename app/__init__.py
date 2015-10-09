@@ -4,7 +4,11 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+if os.environ.get('DATABASE_URL') is None:
+    SQLALCHEMY_DATABASE_URI = 'postgres:///fogornot'
+else:
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 db = SQLAlchemy(app)
 
 class jsonFile(db.Model):
