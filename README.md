@@ -1,6 +1,8 @@
 # FogOrNot
 
-## An interactive map that predicts the San Francisco fog, using data from 130+ amateur weather stations
+## A map built on amateur weather data that predicts where the San Francisco fog will hit
+
+[Live version here](http://fogornot.com)
 
 Fog or Not makes hourly predictions about how much fog there will be in San Francisco, for each neighborhood.
 
