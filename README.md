@@ -4,7 +4,7 @@ A map that predicts the San Francisco fog, using data from 130 personal rooftop 
 
 ##GaSiProMo Log
 
-#11/1/2015
+###11/1/2015
 GaSiProMo begins!
 
 
