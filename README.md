@@ -1,6 +1,12 @@
 # FogOrNot
 
-## A map built on amateur weather data that predicts where the San Francisco fog will hit
+A map that predicts the San Francisco fog, using data from 130 personal rooftop weather stations
+
+##GaSiProMo Log
+
+
+
+***
 
 [Live version here](http://fogornot.com)
 
