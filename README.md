@@ -2,12 +2,14 @@
 
 A map that predicts the San Francisco fog, using data from 130 personal rooftop weather stations. [Live version here](http://fogornot.com).
 
+##GaSiProMo
+
+I'm using this project for [GaSiProMo](https://codelympics.io/projects/3). My goal for the month is to build a machine learning algorithm that does a better job forecasting fog than my current version. 
+
 If you have feedback, please share on my GaSiProMo Reddit [thread](https://www.reddit.com/r/codelympics/comments/3r0nvz/gasipromo_fog_or_not_project/)!
 
-##[GaSiProMo](https://codelympics.io/projects/3) Log
-
 ###*11/1/2015*
-GaSiProMo begins! This week, I'm going to find my training data set – times when flights were delayed at SFO airport because of fog, and precipitating weather conditions. I'm going to use this to train my forecasting model for fog. Read the [full log entry](https://github.com/webmasterraj/GaSiProMo/blob/master/project_logs/log_10-17-2015.md) for more.
+GaSiProMo begins! This week, I'm going to find a training data set – times when flights were delayed at SFO airport because of fog, and the preceding weather conditions. I'm going to use this to train a forecasting model for fog. Read the [full log entry](https://github.com/webmasterraj/GaSiProMo/blob/master/project_logs/log_10-17-2015.md) for more info.
 
 ***
 
