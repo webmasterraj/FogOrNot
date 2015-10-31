@@ -4,7 +4,7 @@ A map that predicts the San Francisco fog, using data from 130 personal rooftop 
 
 ##GaSiProMo
 
-I'm using this project for [GaSiProMo](https://codelympics.io/projects/3). My goal for the month is to build a machine learning algorithm that does a better job forecasting fog than my current version. 
+I'm using this project for [GaSiProMo](https://codelympics.io/projects/3). My goal for the month is to build a machine learning algorithm that does a better job forecasting fog than my current version. I'll be keeping a log of my progress through the month here.
 
 If you have feedback, please share on my GaSiProMo Reddit [thread](https://www.reddit.com/r/codelympics/comments/3r0nvz/gasipromo_fog_or_not_project/)!
 
