@@ -1,5 +1,6 @@
 import urllib2
 import json
+import os
 
 
 hourlyAPI = 'hourly10day/q/pws:'
@@ -7,7 +8,7 @@ geoAPI = 'geolookup/q/'
 # currentCondidtionsAPI = 'conditions/q/pws:'
 
 urlBase = 'http://api.wunderground.com/api'
-key = '28ceb0f69590b457'
+key = os.environ['WU_KEY'] 
 
 max_calls_per_minute = 10
 max_calls_per_day = 400

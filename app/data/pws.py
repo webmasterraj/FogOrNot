@@ -23,18 +23,19 @@ def SFStations():
 
 
 def forecastsDF(stations):
-	station_dfs = []
-	for i, s in enumerate(stations):
-		location = (s['lon'], s['lat'])
-		hrs, forecasts = zip(*wu.getFogForecast(s['id']))
-		station_dfs.append(pd.DataFrame({
-			'station_id' : [s['id'] for _ in range(len(hrs))],
-			'station_location' : [location for _ in range(len(hrs))],
-			'neighborhood' : [s['neighborhood'] for _ in range(len(hrs))],
-			'hour' : hrs,
-			'forecast' : forecasts
-			})
-		)
-		print i, s['id'] # debugging purposes only
-		sleep(60/(wu.max_calls_per_minute - 1))
-	return station_dfs
+    station_dfs = []
+    for i, s in enumerate(stations):
+        location = (s['lon'], s['lat'])
+        fog_forecasts = wu.getFogForecast(s['id'])
+        if fog_forecasts:
+            hrs, forecasts = zip(*fog_forecasts)
+            station_dfs.append(pd.DataFrame({
+                'station_id' : [s['id'] for _ in range(len(hrs))],
+                'station_location' : [location for _ in range(len(hrs))],
+                'neighborhood' : [s['neighborhood'] for _ in range(len(hrs))],
+                'hour' : hrs,
+                'forecast' : forecasts
+                }))
+        print i, s['id'] # debugging purposes only
+        sleep(60/(wu.max_calls_per_minute - 1))
+    return station_dfs
